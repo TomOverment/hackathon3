@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+<h1>ToDo List</h1>
+<ul>
+    {% for task in tasks %}
+    <li>
+        <strong>{{ task.title }}</strong>: {{ task.description }}
+        {% if task.completed %} (Completed) {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

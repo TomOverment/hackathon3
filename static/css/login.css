@@ -1,0 +1,72 @@
+/* Add your custom styles for the login page here */
+/* Custom styles for the login page */
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    margin-bottom: 20px;
+    width: 80px;
+    height: auto;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+
+
+
+

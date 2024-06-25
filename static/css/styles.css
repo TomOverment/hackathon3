@@ -1,0 +1,50 @@
+/* Base styles for the website */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    padding: 10px 20px;
+    background-color: #000; /* Black background for navbar */
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    margin-left: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ccc;
+}
+
+.container {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
