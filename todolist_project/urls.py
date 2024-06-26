@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('tasks/', login_required(RedirectView.as_view(url='/tasks/list/', permanent=False)), name='tasks'),
     path('tasks/list/', include('todo.urls')),
+    path('tasks/', include('todo.urls')),
     path('', RedirectView.as_view(url='/accounts/login/', permanent=False), name='index'),
 ]
 
