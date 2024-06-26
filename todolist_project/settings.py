@@ -28,7 +28,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-tomoverment-hackathon3-2xbupqhb2f5.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = [
+        '8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io']
 
 
 INSTALLED_APPS = [
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware'
+    
 ]
 
 ROOT_URLCONF = 'todolist_project.urls'
@@ -127,5 +129,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.gitpod.io',
+    "https://8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io",
+    "https://*.herokuapp.com"
 ]
