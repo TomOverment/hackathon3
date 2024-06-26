@@ -129,3 +129,18 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+
+Wireframes
+
+Initial main page
+![alt text](image.png)
+
+Added search bar to enable searching via tags
+![alt text](image-1.png)
+
+Added tags to different tasks
+![alt text](image-2.png)
+
+Added new task page, including the option to add tags
+![alt text](image-3.png)
