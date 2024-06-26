@@ -1,14 +1,22 @@
+<!-- todo/templates/todo/index.html -->
+
 {% extends 'base.html' %}
 
 {% block title %}Task List{% endblock %}
 
 {% block content %}
 <h1>ToDo List</h1>
+<a href="{% url 'add_task' %}">Add new task</a>
 <ul>
     {% for task in tasks %}
     <li>
         <strong>{{ task.title }}</strong>: {{ task.description }}
-        {% if task.completed %} (Completed) {% endif %}
+        {% if task.is_completed %} (Completed) {% endif %}
+        <br>
+        Due Date: {{ task.due_date }}
+        <br>
+        <a href="{% url 'complete_task' task.id %}">Mark Complete</a>
+        <a href="{% url 'delete_task' task.id %}">Delete</a>
     </li>
     {% endfor %}
 </ul>
