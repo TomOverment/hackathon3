@@ -144,3 +144,9 @@ Added tags to different tasks
 
 Added new task page, including the option to add tags
 ![alt text](image-3.png)
+
+Favicons for the website
+![alt text](image-1.png)
+
+Logo for the website
+![alt text](image-5.png)
