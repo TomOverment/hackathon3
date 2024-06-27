@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'todo',
-    '.herokuapp.com'
+    
 ]
 
 SITE_ID = 1
