@@ -1,7 +1,20 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
 from .forms import TaskForm
+from django.contrib import messages 
+import datetime
+from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def task_search(request):
+    query = request.GET.get('query')
+    if query:
+        tasks = Task.objects.filter(title__icontains=query, user=request.user)
+    else:
+        tasks = Task.objects.filter(user=request.user)
+    return render(request, 'todo/task_search.html', {'tasks': tasks, 'query': query})
 
 @login_required
 def task_list(request):
@@ -16,7 +29,15 @@ def add_task(request):
             task = form.save(commit=False)
             task.user = request.user
             task.save()
-            return redirect('task_list')
+            messages.success(request, 'Task added successfully.')  # Add success message
+            send_mail(
+                'New Task Added',
+                f'You have added a new task: {task.title}',
+                'from@example.com',
+                [request.user.email],
+                fail_silently=False,
+            )
+            return redirect('task_list')  # Redirect to task list or any other page
     else:
         form = TaskForm()
     return render(request, 'todo/add_task.html', {'form': form})
