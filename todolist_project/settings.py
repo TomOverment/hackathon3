@@ -31,7 +31,6 @@ DEBUG = True
 ALLOWED_HOSTS = [
         '8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io']
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'todo',
+    '.herokuapp.com'
 ]
 
 SITE_ID = 1
