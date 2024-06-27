@@ -6,6 +6,16 @@ import datetime
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 
+
+@login_required
+def task_search(request):
+    query = request.GET.get('query')
+    if query:
+        tasks = Task.objects.filter(title__icontains=query, user=request.user)
+    else:
+        tasks = Task.objects.filter(user=request.user)
+    return render(request, 'todo/task_search.html', {'tasks': tasks, 'query': query})
+
 @login_required
 def task_list(request):
     tasks = Task.objects.all()
@@ -20,7 +30,6 @@ def add_task(request):
             task.user = request.user
             task.save()
             messages.success(request, 'Task added successfully.')  # Add success message
-
             send_mail(
                 'New Task Added',
                 f'You have added a new task: {task.title}',
@@ -28,8 +37,6 @@ def add_task(request):
                 [request.user.email],
                 fail_silently=False,
             )
-
-
             return redirect('task_list')  # Redirect to task list or any other page
     else:
         form = TaskForm()

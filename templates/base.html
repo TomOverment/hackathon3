@@ -13,6 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
+            <!-- Brand/logo and toggler button -->
             <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="{% static 'admin/img/logo.png' %}" alt="logo" height="30">
                 ToDo Or Not ToDo
@@ -20,13 +21,18 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+    
+            <!-- Navbar links and search form -->
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <!-- Left side: Authentication links (Login and Sign Up) -->
+                <ul class="navbar-nav">
                     {% if user.is_authenticated %}
+                        <!-- Authenticated links -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                     {% else %}
+                        <!-- Guest links -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                         </li>
@@ -35,10 +41,16 @@
                         </li>
                     {% endif %}
                 </ul>
+    
+                <!-- Center: Search form -->
+                <form class="d-flex" method="get" action="{% url 'task_search' %}">
+                    <input class="form-control me-2" type="search" placeholder="Search tasks" aria-label="Search" name="query">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>
-
+    
     {% if messages %}
         <div class="container mt-3">
             {% for message in messages %}
