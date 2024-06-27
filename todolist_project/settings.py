@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key')
 DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com'] 
-CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com', 'https://8000-tomoverment-hackathon3-kzd1i117tfb.ws-eu114.gitpod.io/admin/login/?next=/admin/', 'https://8000-tomoverment-hackathon3-kzd1i117tfb.ws-eu114.gitpod.io/accounts/signup/', 'https://8000-tomoverment-hackathon3-kzd1i117tfb.ws-eu114.gitpod.io']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
