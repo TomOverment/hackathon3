@@ -28,10 +28,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key')
 
 DEBUG = True
 
-
-ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
+ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com'] 
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com']
-
 
 
 INSTALLED_APPS = [
@@ -46,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'todo',
+    '.herokuapp.com'
 ]
 
 SITE_ID = 1
