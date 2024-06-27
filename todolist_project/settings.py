@@ -31,7 +31,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com'] 
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com']
 
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
