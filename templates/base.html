@@ -1,4 +1,5 @@
 {% load static %}
+<!{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +14,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'index' %}">
-                <img src="{% static 'staticfiles/admin/img/logo.png' %}" alt="Logo" height="30">
-                Task List
+                <img src="{% static 'admin/img/logo.png' %}" alt="logo" height="30">
+                ToDo Or Not ToDo
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,53 +38,20 @@
             </div>
         </div>
     </nav>
+
+    {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <div class="container mt-5">
         {% block content %}
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Add New Task</h2>
-                <form method="post" action="{% url 'add_task' %}">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="taskTitle" class="form-label">Task Title</label>
-                        <input type="text" class="form-control" id="taskTitle" name="title" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="taskDescription" class="form-label">Description</label>
-                        <textarea class="form-control" id="taskDescription" name="description" rows="3" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="taskDueDate" class="form-label">Due Date</label>
-                        <input type="date" class="form-control" id="taskDueDate" name="due_date">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Add Task</button>
-                </form>
-            </div>
-            <div class="col-md-8">
-                <h2>Task List</h2>
-                <div class="mb-3">
-                    <label for="taskFilter" class="form-label">Filter by Status</label>
-                    <select class="form-select" id="taskFilter" onchange="filterTasks(this.value)">
-                        <option value="all">All</option>
-                        <option value="completed">Completed</option>
-                        <option value="pending">Pending</option>
-                    </select>
-                </div>
-                <div id="taskList">
-                    {% for task in tasks %}
-                        <div class="card mb-3 {% if task.is_completed %}bg-light{% else %}bg-white{% endif %}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ task.title }}</h5>
-                                <p class="card-text">{{ task.description }}</p>
-                                <p class="card-text"><small class="text-muted">Due: {{ task.due_date }}</small></p>
-                                <a href="{% url 'complete_task' task.id %}" class="btn btn-success">Complete</a>
-                                <a href="{% url 'delete_task' task.id %}" class="btn btn-danger">Delete</a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
         {% endblock %}
     </div>
     <footer class="footer mt-auto py-3 bg-dark text-white">

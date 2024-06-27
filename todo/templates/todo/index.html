@@ -2,10 +2,10 @@
 
 {% extends 'base.html' %}
 
-{% block title %}Task List{% endblock %}
+{% block title %}ToDo Or Not ToDo{% endblock %}
 
 {% block content %}
-<h1>ToDo List</h1>
+<h1>ToDo Or Not ToDo</h1>
 <a href="{% url 'add_task' %}">Add New Task</a>
 <ul>
     {% for task in tasks %}

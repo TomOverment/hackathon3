@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'todo',
-    '.herokuapp.com'
-]
+    ]
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/tasks/list/'
