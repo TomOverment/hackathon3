@@ -137,7 +137,7 @@ Initial main page
 ![alt text](image.png)
 
 Added search bar to enable searching via tags
-![alt text](image-1.png)
+![alt text](image-4.png)
 
 Added tags to different tasks
 ![alt text](image-2.png)
