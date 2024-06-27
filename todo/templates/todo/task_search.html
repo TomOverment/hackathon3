@@ -1,24 +1,23 @@
-<!-- todo/templates/todo/index.html -->
-
 {% extends 'base.html' %}
 
-{% block title %}ToDo Or Not ToDo{% endblock %}
+{% block title %}Search Results{% endblock %}
 
 {% block content %}
-<h1>ToDo Or Not ToDo</h1>
-<a href="{% url 'add_task' %}">Add New Task</a>
+<h1>Search Results</h1>
+<p>Showing results for: <strong>{{ query }}</strong></p>
 <ul>
     {% for task in tasks %}
     <li>
         <strong>{{ task.title }}</strong>: {{ task.description }}
         {% if task.is_completed %} (Completed) {% endif %}
         <br>
-        <a href="{% url 'edit_task' task_id=task.id %}">Edit Task</a>
-        Due Date: {{ task.due_date }}
-        <br>
+        <a href="{% url 'edit_task' task.id %}">Edit Task</a>
         <a href="{% url 'complete_task' task.id %}">Mark Complete</a>
         <a href="{% url 'delete_task' task.id %}">Delete</a>
+        Due Date: {{ task.due_date }}
     </li>
+    {% empty %}
+    <li>No tasks found.</li>
     {% endfor %}
 </ul>
 {% endblock %}
