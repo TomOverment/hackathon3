@@ -1,0 +1,8 @@
+{% for task in tasks %}
+    <div class="task {% if task.priority == 'H' %}bg-danger{% elif task.priority == 'M' %}bg-warning{% else %}bg-success{% endif %}">
+        <h5>{{ task.title }}</h5>
+        <p>{{ task.description }}</p>
+        <p>Priority: {{ task.get_priority_display }}</p>
+        ...
+    </div>
+{% endfor %}

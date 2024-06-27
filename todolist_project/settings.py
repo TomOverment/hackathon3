@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key')
 DEBUG = True
 
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com'] 
-CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com', 'https://8000-tomoverment-hackathon3-kzd1i117tfb.ws-eu114.gitpod.io/admin/login/?next=/admin/', 'https://8000-tomoverment-hackathon3-kzd1i117tfb.ws-eu114.gitpod.io/accounts/signup/', 'https://8000-tomoverment-hackathon3-kzd1i117tfb.ws-eu114.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com', 'https://8000-tomoverment-hackathon3-lajmqd5ekqp.ws-eu114.gitpod.io']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -115,6 +115,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -132,3 +134,5 @@ CSRF_TRUSTED_ORIGINS = [
     "https://8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io",
     "https://*.herokuapp.com"
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
