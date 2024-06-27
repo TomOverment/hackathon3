@@ -133,3 +133,5 @@ CSRF_TRUSTED_ORIGINS = [
     "https://8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io",
     "https://*.herokuapp.com"
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
 from .forms import TaskForm
 from django.contrib import messages 
+import datetime
+from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -18,6 +20,16 @@ def add_task(request):
             task.user = request.user
             task.save()
             messages.success(request, 'Task added successfully.')  # Add success message
+
+            send_mail(
+                'New Task Added',
+                f'You have added a new task: {task.title}',
+                'from@example.com',
+                [request.user.email],
+                fail_silently=False,
+            )
+
+
             return redirect('task_list')  # Redirect to task list or any other page
     else:
         form = TaskForm()
