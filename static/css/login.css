@@ -19,7 +19,6 @@ body {
 
 .logo img {
     height: 200px;
-    margin-left: 170px;
 }
 
 .login-container {
@@ -29,7 +28,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
-    margin-left: 450px;
+    margin-left: 280px;
 }
 
 /* Title styles */
