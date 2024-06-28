@@ -130,7 +130,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io",
+    "https://8000-tomoverment-hackathon3-5he6n369guv.ws-eu114.gitpod.io",
     "https://*.herokuapp.com"
 ]
 
