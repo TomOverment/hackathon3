@@ -130,6 +130,12 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 
 Happy coding!
 
+- Project
+- To do or not to do is a To do list website where anyone who signs up can use the website to keep track of tasks, assigning them as either tasks that still need to be done or are complete tio help keep track of daily life. 
+
+- Features
+- 
+
 
 Wireframes
 
@@ -137,10 +143,37 @@ Initial main page
 ![alt text](image.png)
 
 Added search bar to enable searching via tags
-![alt text](image-1.png)
+![alt text](image-4.png)
 
 Added tags to different tasks
 ![alt text](image-2.png)
 
 Added new task page, including the option to add tags
 ![alt text](image-3.png)
+
+Favicons for the website
+![alt text](image-1.png)
+
+Logo for the website
+![alt text](image-5.png)
+
+Features
+
+
+- Issues
+- The team had some issues with Gitpod with regards to pulling and pushing which was caused by miscommunication, this was resolved by the end of the second day.
+- We did not take as long to plan using the agile developemnt stratagy before starting the project as we should have done.
+- Not all the team members were present at the same time which caused some difficulty with the different code coming together.
+- 
+
+
+- Roadmap
+- Add a drag and drop feature for touchscreens
+- Have a custom logo to better reflect the purpose of our website
+
+
+- Collaborators
+- Team Leader Thomas
+- Elmi
+- Walid
+- Lydia
