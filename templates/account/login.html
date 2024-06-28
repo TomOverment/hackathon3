@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'index' %}">
-                <img src="{% static 'templates/account/login.html' %}" alt="Logo" height="30">
+                <img src="{% static 'images/logo.png' %}" alt="logo" height="30">
                 ToDo Or Not ToDo
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +41,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="text-center my-4">
-                    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
-                </div>
+               
                 <h1 class="text-center">{% trans "Sign In" %}</h1>
                 <form method="post" action="{% url 'account_login' %}">
                     {% csrf_token %}

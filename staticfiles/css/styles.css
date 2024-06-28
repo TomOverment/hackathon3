@@ -1,38 +1,84 @@
+/* Base styles for the website */
 body {
-    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar {
     padding: 10px 20px;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #ccc;
+    background-color: #000; /* Black background for navbar */
 }
 
-header .logo img {
-    height: 50px;
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-header nav ul {
-    list-style-type: none;
+.navbar-nav .nav-link {
+    color: #fff;
+    margin-left: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ccc;
+}
+
+.container {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer p {
     margin: 0;
-    padding: 0;
+    font-size: 14px;
 }
 
-header nav ul li {
-    display: inline;
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    text-decoration: none;
+/* Specific styles for the sign-out page */
+.page-header {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
     color: #333;
 }
 
-header nav ul li a:hover {
-    text-decoration: underline;
+.page-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #007bff; /* Primary color */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
 }
