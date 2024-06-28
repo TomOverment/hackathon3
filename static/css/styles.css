@@ -1,4 +1,4 @@
-/* Base styles for the website */
+/* General styles */
 body {
     background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
@@ -6,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* Navbar styles */
 .navbar {
     padding: 10px 20px;
     background-color: #000; /* Black background for navbar */
@@ -25,6 +26,7 @@ body {
     color: #ccc;
 }
 
+/* Container styles */
 .container {
     margin-top: 60px;
     padding: 20px;
@@ -33,6 +35,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer styles */
 .footer {
     background-color: #343a40;
     color: #fff;
@@ -48,59 +51,105 @@ body {
     font-size: 14px;
 }
 
-/* Specific styles for the sign-out page */
-.page-header {
-    font-size: 2em;
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-}
-
-.page-text {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    color: #666;
-}
-
-.form-container {
+/* Logo styles */
+.logo {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
+.logo img {
+    height: 150px; /* Adjust this value to make the logo larger or smaller */
+}
+
+/* Form container styles */
+.login-container, .form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Title styles */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Button styles */
 .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
     padding: 10px 20px;
-    margin: 10px 0;
-    border: none;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
     cursor: pointer;
-    font-size: 1em;
-    background-color: #007bff; /* Primary color */
-    color: white;
 }
 
 .btn-primary:hover {
     background-color: #0056b3;
 }
 
-/* Specific styles for the search results page */
-.search-results {
-    margin-top: 20px;
+/* Form group styles */
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
 }
 
-.search-results h1 {
-    text-align: center;
+.form-check {
+    text-align: left;
+}
+
+/* Link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Messages styles */
+.alert {
+    padding: 15px;
     margin-bottom: 20px;
-    color: #333;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
-.search-results p {
-    text-align: center;
-    color: #666;
-    font-size: 1.1em;
-    margin-bottom: 30px;
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
 }
 
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* Task list styles */
 .task-list {
     list-style-type: none;
     padding: 0;
@@ -149,5 +198,20 @@ body {
 .task-list li .due-date {
     font-size: 0.9em;
     color: #888;
+}
+
+/* Specific page styles */
+.page-header {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.page-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #666;
 }
 
