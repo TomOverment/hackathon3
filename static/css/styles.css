@@ -82,3 +82,72 @@ body {
 .btn-primary:hover {
     background-color: #0056b3;
 }
+
+/* Specific styles for the search results page */
+.search-results {
+    margin-top: 20px;
+}
+
+.search-results h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-results p {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list li strong {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.task-list li .task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-list li .task-actions a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.task-list li .task-actions a:hover {
+    text-decoration: underline;
+}
+
+.task-list li .task-info {
+    max-width: 70%;
+}
+
+.task-list li .task-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.task-list li .due-date {
+    font-size: 0.9em;
+    color: #888;
+}
+
