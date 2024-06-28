@@ -17,19 +17,26 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
-
-SECRET_KEY = os.getenv('SECRET_KEY', 'your-secret-key')
-
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com'] 
-CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io', 'https://*.herokuapp.com', 'https://8000-tomoverment-hackathon3-lajmqd5ekqp.ws-eu114.gitpod.io', 'https://8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io', '8000-tomoverment-hackathon3-2xbupqhb2f5.ws-eu114.gitpod.io]
+ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
+ALLOWED_HOST = os.environ.get("ALLOWED_HOST")
+if ALLOWED_HOST:
+    ALLOWED_HOSTS.append(ALLOWED_HOST)
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.gitpod.io",
+    "https://*.herokuapp.com"
+]
+CSRF_TRUSTED_ORIGIN = os.environ.get("CSRF_TRUSTED_ORIGIN")
+if CSRF_TRUSTED_ORIGIN:
+    CSRF_TRUSTED_ORIGINS.append(CSRF_TRUSTED_ORIGIN)
+
+print(CSRF_TRUSTED_ORIGINS)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,7 +50,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'todo',
-    
 ]
 
 SITE_ID = 1
@@ -58,8 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
-    
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'todolist_project.urls'
@@ -67,12 +72,12 @@ ROOT_URLCONF = 'todolist_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'], 
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',  
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -85,7 +90,6 @@ WSGI_APPLICATION = 'todolist_project.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -102,22 +106,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
-
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-
-
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -129,10 +125,5 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://8000-tomoverment-hackathon3-pwr0m3zr2oa.ws-eu114.gitpod.io",
-    "https://*.herokuapp.com"
-]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
